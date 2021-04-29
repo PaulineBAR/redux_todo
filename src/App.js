@@ -1,5 +1,7 @@
 import './App.css';
-import { connect } from "react-redux"
+import { connect } from "react-redux";
+import styled from "styled-components";
+
 
 // HOMEWORK
 // Add an input field 
@@ -18,8 +20,8 @@ function TodoApp(props) {
 
       <div>{props.todoList.map(todo => <p>{todo}</p>)}</div>
 
-      <button onClick={props.updateInputValue} >ADD TODO</button>
-      <button onClick={props.clearAll}>EMPTY</button>
+      <Button onClick={props.updateInputValue} >ADD TODO</Button>
+      <Button onClick={props.clearAll}>EMPTY</Button>
     </div>
   );
 }
@@ -45,5 +47,17 @@ const mapDispatchToProps = (dispatch) => ({// I understand that the updateInputv
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 
 
+const Button = styled.button`
+color: red;
+border: 2px solid;
+border-color: black;
+margin: 9px;
+font-family: helvetica ; 
+border-radius: 3px;
+`;
 
+
+/*const EmptyButton = styled.emptyButton`
+color: blue`
+*/
 

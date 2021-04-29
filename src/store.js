@@ -19,10 +19,10 @@ function reducer(state = initialState, action) {
             return []
         default:
             return state
-        case 'UPDATE_VALUE': // I am not sure if I should create a new case or change the 'ADD_TODO'
+        case 'UPDATE_VALUE': 
             let updateState = [
                 ...state,
-                action.value
+                action.payload
             ]
             return updateState
     }
